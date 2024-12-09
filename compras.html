@@ -106,6 +106,107 @@
         </div>
     </div>
     <!--Inicio de secciones-->
+
+    <div class="container py-5">
+    <div class="row">
+
+        <div class="col-lg-3">
+            <h1 class="h2 pb-4">Categorias</h1>
+            <ul class="list-unstyled templatemo-accordion">
+                <li class="pb-3">
+                    <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
+                        <Summary>Fresas con Crema</Summary>
+                        <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
+                    </a>
+                    <ul class="collapse show list-unstyled pl-3">
+                        <li><a class="text-decoration-none" href="#"><details>
+                            <summary>9 Oz</summary>
+                            <p>Para deleitar tu paladar.</p>
+                        </details></a></li>
+                        <li><a class="text-decoration-none" href="#"><details>
+                            <summary>12 Oz</summary>
+                            <p>Un extra de dulsura.</p>
+                        </details></a></li>
+                    </ul>
+                </li>
+                <li class="pb-3">
+                    <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
+                        Para Regalar
+                        <i class="pull-right fa fa-fw fa-chevron-circle-down mt-1"></i>
+                    </a>
+                    <ul id="collapseThree" class="collapse list-unstyled pl-3">
+                        <li><a class="text-decoration-none" href="#"><details>
+                            <summary>Anchetas</summary>
+                            <p>Personaliza tu regalo.</p>
+                        </details></a></li>
+                        <li><a class="text-decoration-none" href="#"><details>
+                            <summary>Rosas Eternas</summary>
+                            <p>Haz que dure para siempre.</p>
+                        </details></a></li>
+                    
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-lg-9">
+            <div class="row">
+
+                <div class="col-md-6 pb-4">
+                    <div class="d-flex">
+                        <select id="filtro" class="form-control">
+                            <option value="todas">Todas</option>
+                            <option value="fresas">Fresas con crema</option>
+                            <option value="anchetas">Anchetas</option> 
+                            <option value="rosas">Rosas eternas</option>                            
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- productos en el carro -->
+            <!-- fin de productos -->
+            <!-- carrito -->
+            <div class="container">
+                <div class="row">
+                    <!-- Elementos generados a partir del JSON -->
+                    <main id="items" class="col-sm-8 row"></main>
+                    <!-- Carrito -->
+                    <aside class="col-sm-4">
+                        <h3>Carrito</h3>
+                        <!-- Elementos del carrito -->
+                        <ul id="carrito" class="list-group"></ul>
+                        <hr>
+                        <!-- Precio total -->
+                        <p class="text-right">Total: $ <span id="total"></span></p>
+                        <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+                        <button class="btn btn-info">
+                        <a href="pago.html" target="target_blank">Nequi</a>
+                        </button>
+                        <button class="btn btn-info">
+                        <a href="pago.html" target="target_blank">Daviplata</a>
+                        </button>
+                    </aside>
+                </div>
+            </div>
+    <!-- paginacion -->
+            <div class="row">
+                <ul class="pagination pagination-lg justify-content-end">
+                    <li class="page-item disabled">
+                        <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    </div>
+<!-- final de contenido -->
      <!--top footer-->
     <footer class="bg-dark" id="templatemo_footer">
         <div class="container">
@@ -182,5 +283,6 @@
     <script src="assets/js/jquery-1.11.0.min.js"></script>
     <script src="assets/js/templatemo.min.js"></script>
     <script src="assets/js/custom.js"></script>
+    <script src="assets/js/carrito.js"></script>
 </body>
 </html>

@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
     <!-- adicionales css -->
-    <link rel="stylesheet" href="assets/css/">
+    <!-- <link rel="stylesheet" href="assets/css/">
     <link rel="stylesheet" href="assets/css/templatemo.css">
     <link rel="stylesheet" href="assets/css/custom.css">
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css"> -->
 
 </head>
 <body>
@@ -44,6 +44,11 @@
             <a class="navbar-brand text-success logo h1 align-self-center" href="index.html">
                 <img class="img-fluid" src="assets/img/logo_inicio.png">
             </a>
+            <!-- fecha -->
+            <script>
+                var f = new Date();
+                document.write(f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
+            </script>
             <!-- Boton menu -->
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>    
