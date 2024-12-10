@@ -164,7 +164,7 @@
                 </div>
             </div>
             <!-- productos en el carro -->
-             <script>
+            <script>
                 //DOM
                 document.addEventListener('DOMContentLoaded',()=>{
                     //Variables base de datos
@@ -180,7 +180,7 @@
                             id:2,
                             nombre: 'fresa con crema brownie',
                             precio: 15000,
-                            imagen: 'assets/img/producto_fresa.jpeg'
+                            imagen: 'assets/img/fresa_brownie.jpeg'
 
                         },
                         {
@@ -222,7 +222,7 @@
                             id:8,
                             nombre: 'buquet de rosas',
                             precio: 50000,
-                            imagen: 'assets/img/producto_rosas3.jpeg'
+                            imagen: 'assets/img/buquet_rosas.jpeg'
 
                         },
                         {
@@ -245,70 +245,68 @@
                 /*
                 dibujamos todos los productos a partir de la base de datos
                 */
-                function renderizarProductos(){
-                    baseDeDatos.forEach((info) => {
-                        //estructura
-                        //crea un elemento
-                        const miNodo = document.createElement('div');
-                        miNodo.classList.add('card','col-sm-4');
-                        //body
-                        const miNodoCArdBody = document.createElement('div');
-                        miNodoCardBody.classList.add('card-body');
-                        //titulo
-                        const miNodoTitle = document.createElement('h6');
-                        miNodoTitle.classList.add('card-title');
-                        miNodoTitle.textContent = info.nombre;
-                        //imagen
-                        const miNodoImagen = document.createElement('img');
-                        miNodoImagen.classList.add('img-fluid');
-                        miNodoImagen.setAttribute('scr',info.imagen);
-                        //precio
-                        const miNodoPrecio = document.createElement('p');
-                        miNodoPrecio.classList.add('card-text');
-                        miNodoPrecio.textContent = `${divisa}${info.precio}`;
+                    function renderizarProductos(){
+                        baseDeDatos.forEach((info) => {
+                            //estructura
+                            //crea un elemento
+                            const miNodo = document.createElement('div');
+                            miNodo.classList.add('card','col-sm-4');
+                            //body
+                            const miNodoCardBody = document.createElement('div');
+                            miNodoCardBody.classList.add('card-body');
+                            //titulo
+                            const miNodoTitle = document.createElement('h6');
+                            miNodoTitle.classList.add('card-title');
+                            miNodoTitle.textContent = info.nombre;
+                            //imagen
+                            const miNodoImagen = document.createElement('img');
+                            miNodoImagen.classList.add('img-fluid');
+                            miNodoImagen.setAttribute('src',info.imagen);
+                            //precio
+                            const miNodoPrecio = document.createElement('p');
+                            miNodoPrecio.classList.add('card-text');
+                            miNodoPrecio.textContent = `${divisa}${info.precio}`;
 
-                        //insertar
-                        miNodoCArdBody.appendChild(miNodoImagen)
-                        miNodoCArdBody.appendChild(miNodoTitle);
-                        miNodoCArdBody.appendChild(miNodoPrecio);
-                        miNodo.appendChild(miNodoCArdBody);
-                        DOMitems.appendChild(miNodo);
-                    });
-                }
-                //dibujar todos los productos en el carrito
-                function renderizarCarrito(){
-                    //vaciamos todo el HTML
-                    DOMcarrito.textContent = '';
-                    //quitar duplicados
-                    const carritoDuplicados = [...new set(carrito)];
-                    //generamos los nodos a partir del carrito
-                    carritoDuplicados.forEach((item)=>{
-                        //obtenemos el item que necesitamos
-                        const miItem = baseDeDatos.filtrer((itemBaseDeDatos) => {
-                            return itemBaseDeDatos.id === parseInt(item)
+                            //insertar
+                            miNodoCardBody.appendChild(miNodoImagen)
+                            miNodoCardBody.appendChild(miNodoTitle);
+                            miNodoCardBody.appendChild(miNodoPrecio);
+                            miNodo.appendChild(miNodoCardBody);
+                            DOMitems.appendChild(miNodo);
                         });
-                        //cuenta el numero de veces que repite el producto
-                        const numeroUnidadesItem = carrito.reduce((total,itemId)=>{
-                            return itemId === item ? total+=1 : total;
-                        },0);
-                        //creamos el nodo del item del carrito
-                        const miBoton = document.createElement('button');
-                        miBoton.classList.add('btn','btn-danger','mx-5');
-                        miBoton.textContent='X';
-                        miBoton.style.marginLeft = '1rem';
-                        miBoton.addEventListener('click',borarritemCarrito);
-                        //mezclamos nodos
-                        miNodo.appendChild(miBoton);
-                        DOMcarrito.appendChild(miNodo);
+                    }
+                    //dibujar todos los productos en el carrito
+                    function renderizarCarrito(){
+                        //vaciamos todo el HTML
+                        DOMcarrito.textContent = '';
+                        //quitar duplicados
+                        const carritoDuplicados = [...new set(carrito)];
+                        //generamos los nodos a partir del carrito
+                        carritoDuplicados.forEach((item)=>{
+                            //obtenemos el item que necesitamos
+                            const miItem = baseDeDatos.filtrer((itemBaseDeDatos) => {
+                                return itemBaseDeDatos.id === parseInt(item)
+                            });
+                            //cuenta el numero de veces que repite el producto
+                            const numeroUnidadesItem = carrito.reduce((total,itemId)=>{
+                                return itemId === item ? total+=1 : total;
+                            },0);
+                            //creamos el nodo del item del carrito
+                            const miBoton = document.createElement('button');
+                            miBoton.classList.add('btn','btn-danger','mx-5');
+                            miBoton.textContent='X';
+                            miBoton.style.marginLeft = '1rem';
+                            miBoton.addEventListener('click',borarritemCarrito);
+                            //mezclamos nodos
+                            miNodo.appendChild(miBoton);
+                            DOMcarrito.appendChild(miNodo);
 
-                    });
-                }
-                renderizarProductos();
-                renderizarCarrito();
-            });
-
-
-             </script>
+                        });
+                    }
+                    renderizarProductos();
+                    renderizarCarrito();
+                });
+            </script>
             <!-- fin de productos -->
             <!-- carrito -->
             <div class="container">
@@ -429,6 +427,6 @@
     <script src="assets/js/jquery-1.11.0.min.js"></script>
     <script src="assets/js/templatemo.min.js"></script>
     <script src="assets/js/custom.js"></script>
-    <script src="assets/js/carrito.js"></script>
+    <!-- <script src="assets/js/carrito.js"></script> -->
 </body>
 </html>
