@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 1,
             nombre: 'Sombrero vueltiao con la bandera de Colombia, 23 vueltas',
             precio: 250000,
-            imagen: 'assets/img/feature_prod_01.jpg',
-            categoria: 'sombreros'
+            imagen: 'assets/img/producto_fresa.jpeg',
+            categoria: 'fresas'
         },
         {
             id: 2,
