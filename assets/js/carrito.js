@@ -4,47 +4,77 @@ document.addEventListener('DOMContentLoaded', () => {
     // Variables
     const baseDeDatos = [
         {
-            id: 1,
-            nombre: 'Sombrero vueltiao con la bandera de Colombia, 23 vueltas',
-            precio: 250000,
-            imagen: 'assets/img/producto_fresa.jpeg',
+            id:1,
+            nombre: 'fresa con crema oreo',
+            precio: 13000,
+            imagen: 'assets/img/fresa_oreo.jpeg',
             categoria: 'fresas'
+
         },
         {
-            id: 2,
-            nombre: 'Sombrero vueltiao-machiembriao',
-            precio: 150000,
-            imagen: 'assets/img/sombrero4.jpg',
-            categoria: 'sombreros'
+            id:2,
+            nombre: 'fresa con crema brownie',
+            precio: 15000,
+            imagen: 'assets/img/fresa_brownie.jpeg',
+            categoria: 'fresas'
+            
+
         },
         {
-            id: 3,
-            nombre: 'Sombrero vueltiao colombiano 15 vueltas tricolor',
-            precio: 250000,
-            imagen: 'assets/img/feature_prod_02.jpg',
-            categoria: 'sombreros'
+            id:3,
+            nombre: 'fresas con crema piazza',
+            precio: 13000,
+            imagen: 'assets/img/fresa_piazza.jpeg',
+            categoria: 'fresas'
+
         },
         {
-            id: 4,
-            nombre: 'Mochila wayuu azul 6',
-            precio: 120000,
-            imagen: 'assets/img/shop_04.jpg',
-            categoria: 'mochilas'
+            id:4,
+            nombre: 'ancheta para papa',
+            precio: 70000,
+            imagen: 'assets/img/ancheta_papa.jpeg',
+            categoria: 'anchetas'
+
         },
         {
-            id: 5,
-            nombre: 'Bolso en fique',
-            precio: 120000,
-            imagen: 'assets/img/shop_03.jpg',
-            categoria: 'bolsos'
+            id:5,
+            nombre: 'ancheta amor y amistad',
+            precio: 65000,
+            imagen: 'assets/img/ancheta_aa.jpeg',
+            categoria: 'anchetas'
+
         },
         {
-            id: 6,
-            nombre: 'Hamaca',
-            precio: 120000,
-            imagen: 'assets/img/category_img_02.jpg',
-            categoria: 'hamacas'
-        }
+            id:6,
+            nombre: 'ancheta toda ocasión',
+            precio: 55000,
+            imagen: 'assets/img/ancheta_all.jpeg',
+            categoria: 'anchetas'
+
+        },
+        {
+            id:7,
+            nombre: 'ramo de rosas rosadas',
+            precio: 60000,
+            imagen: 'assets/img/ramo_rosado.jpeg',
+            categoria: 'rosas'
+
+        },
+        {
+            id:8,
+            nombre: 'buquet de rosas',
+            precio: 50000,
+            imagen: 'assets/img/buquet_rosas.jpeg',
+            categoria: 'rosas'
+
+        },
+        {
+            id:9,
+            nombre: 'corazon de rosas',
+            precio: 80000,
+            imagen: 'assets/img/corazon_rosa.jpeg',
+            categoria: 'rosas'
+        },
     ];
 
     let carrito = [];
@@ -113,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const carritoContainer = document.getElementById("carrito-value");
         carritoContainer.textContent = `${value}`;
     }
-    function renderizarCarrito() {
+    function renderizarCarrito(){
         DOMcarrito.textContent = '';
         const carritoSinDuplicados = [...new Set(carrito)];
         carritoSinDuplicados.forEach((item) => {
